@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>data &mdash; Pika 0.9.5-dev documentation</title>
+    <title>table &mdash; Pika __VERSION_STRING__ documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.9.5-dev',
+        VERSION:     '__VERSION_STRING__',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,9 +25,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Pika 0.9.5-dev documentation" href="index.html" />
-    <link rel="next" title="exceptions" href="exceptions.html" />
-    <link rel="prev" title="credentials" href="credentials.html" /> 
+    <link rel="top" title="Pika __VERSION_STRING__ documentation" href="index.html" />
+    <link rel="prev" title="spec" href="spec.html" /> 
   </head>
   <body>
     <div class="related">
@@ -40,12 +39,9 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="exceptions.html" title="exceptions"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="credentials.html" title="credentials"
+          <a href="spec.html" title="spec"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Pika 0.9.5-dev documentation</a> &raquo;</li> 
+        <li><a href="index.html">Pika __VERSION_STRING__ documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -54,38 +50,31 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="data">
-<h1>data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h1>
-<p>The data module is for encoding and decoding of AMQP binary encoded data.</p>
+  <div class="section" id="table">
+<h1>table<a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This class is not intended for use by those using Pika in their applications. This documentation is for those who are extending Pika or otherwise working on the driver itself.</p>
 </div>
-<span class="target" id="module-data"></span><dl class="function">
-<dt id="data.encode_table">
-<tt class="descclassname">data.</tt><tt class="descname">encode_table</tt><big>(</big><em>pieces</em>, <em>table</em><big>)</big><a class="headerlink" href="#data.encode_table" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="module-table"></span><dl class="function">
+<dt id="table.encode_table">
+<tt class="descclassname">table.</tt><tt class="descname">encode_table</tt><big>(</big><em>pieces</em>, <em>table</em><big>)</big><a class="headerlink" href="#table.encode_table" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="data.encode_value">
-<tt class="descclassname">data.</tt><tt class="descname">encode_value</tt><big>(</big><em>pieces</em>, <em>value</em><big>)</big><a class="headerlink" href="#data.encode_value" title="Permalink to this definition">¶</a></dt>
+<dt id="table.encode_value">
+<tt class="descclassname">table.</tt><tt class="descname">encode_value</tt><big>(</big><em>pieces</em>, <em>value</em><big>)</big><a class="headerlink" href="#table.encode_value" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="data.decode_table">
-<tt class="descclassname">data.</tt><tt class="descname">decode_table</tt><big>(</big><em>encoded</em>, <em>offset</em><big>)</big><a class="headerlink" href="#data.decode_table" title="Permalink to this definition">¶</a></dt>
+<dt id="table.decode_table">
+<tt class="descclassname">table.</tt><tt class="descname">decode_table</tt><big>(</big><em>encoded</em>, <em>offset</em><big>)</big><a class="headerlink" href="#table.decode_table" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="data.decode_value">
-<tt class="descclassname">data.</tt><tt class="descname">decode_value</tt><big>(</big><em>encoded</em>, <em>offset</em><big>)</big><a class="headerlink" href="#data.decode_value" title="Permalink to this definition">¶</a></dt>
+<dt id="table.decode_value">
+<tt class="descclassname">table.</tt><tt class="descname">decode_value</tt><big>(</big><em>encoded</em>, <em>offset</em><big>)</big><a class="headerlink" href="#table.decode_value" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="function">
-<dt id="data.validate_type">
-<tt class="descclassname">data.</tt><tt class="descname">validate_type</tt><big>(</big><em>field_name</em>, <em>value</em>, <em>data_type</em><big>)</big><a class="headerlink" href="#data.validate_type" title="Permalink to this definition">¶</a></dt>
-<dd><p>Validate the data types passed into the RPC Command</p>
-</dd></dl>
 
 </div>
 
@@ -96,14 +85,11 @@
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="credentials.html"
-                        title="previous chapter">credentials</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="exceptions.html"
-                        title="next chapter">exceptions</a></p>
+  <p class="topless"><a href="spec.html"
+                        title="previous chapter">spec</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
-    <li><a href="_sources/data.txt"
+    <li><a href="_sources/table.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
 <div id="searchbox" style="display: none">
@@ -133,12 +119,9 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="exceptions.html" title="exceptions"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="credentials.html" title="credentials"
+          <a href="spec.html" title="spec"
              >previous</a> |</li>
-        <li><a href="index.html">Pika 0.9.5-dev documentation</a> &raquo;</li> 
+        <li><a href="index.html">Pika __VERSION_STRING__ documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

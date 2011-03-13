@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>callback &mdash; Pika 0.9.5-dev documentation</title>
+    <title>callback &mdash; Pika __VERSION_STRING__ documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.9.5-dev',
+        VERSION:     '__VERSION_STRING__',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Pika 0.9.5-dev documentation" href="index.html" />
+    <link rel="top" title="Pika __VERSION_STRING__ documentation" href="index.html" />
     <link rel="next" title="channel" href="channel.html" />
     <link rel="prev" title="adapters" href="adapters.html" /> 
   </head>
@@ -45,7 +45,7 @@
         <li class="right" >
           <a href="adapters.html" title="adapters"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Pika 0.9.5-dev documentation</a> &raquo;</li> 
+        <li><a href="index.html">Pika __VERSION_STRING__ documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -71,7 +71,7 @@ by the CallbackManager.instance() method instead of constructing new
 instances of it.</p>
 <dl class="method">
 <dt id="callback.CallbackManager.add">
-<tt class="descname">add</tt><big>(</big><em>prefix</em>, <em>key</em>, <em>callback</em>, <em>one_shot=True</em>, <em>only_caller=None</em><big>)</big><a class="headerlink" href="#callback.CallbackManager.add" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">add</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#callback.CallbackManager.add" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a callback to the stack for the specified key. If the call is
 specified as one_shot, it will be removed after being fired</p>
 <p>The prefix is usually the channel number but the class is generic
@@ -80,15 +80,21 @@ CallbackManager will restrict processing of the callback to only
 the calling function/object that you specify.</p>
 </dd></dl>
 
+<dl class="classmethod">
+<dt id="callback.CallbackManager.instance">
+<em class="property">classmethod </em><tt class="descname">instance</tt><big>(</big><em>class_</em><big>)</big><a class="headerlink" href="#callback.CallbackManager.instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a handle to the already created object or creates a new object</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="callback.CallbackManager.pending">
-<tt class="descname">pending</tt><big>(</big><em>prefix</em>, <em>key</em><big>)</big><a class="headerlink" href="#callback.CallbackManager.pending" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">pending</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#callback.CallbackManager.pending" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return count of callbacks for a given prefix or key or None</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="callback.CallbackManager.process">
-<tt class="descname">process</tt><big>(</big><em>prefix</em>, <em>key</em>, <em>caller</em>, <em>*args</em>, <em>**keywords</em><big>)</big><a class="headerlink" href="#callback.CallbackManager.process" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">process</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#callback.CallbackManager.process" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run through and process all the callbacks for the specified keys.
 Caller should be specified at all times so that callbacks which
 require a specific function to call CallbackManager.process will
@@ -97,7 +103,7 @@ not be processed.</p>
 
 <dl class="method">
 <dt id="callback.CallbackManager.remove">
-<tt class="descname">remove</tt><big>(</big><em>prefix</em>, <em>key</em>, <em>callback=None</em><big>)</big><a class="headerlink" href="#callback.CallbackManager.remove" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">remove</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#callback.CallbackManager.remove" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove a callback from the stack by prefix, key and optionally
 the callback itself. If you only pass in prefix and key, all
 callbacks for that prefix and key will be removed.</p>
@@ -105,7 +111,7 @@ callbacks for that prefix and key will be removed.</p>
 
 <dl class="method">
 <dt id="callback.CallbackManager.sanitize">
-<tt class="descname">sanitize</tt><big>(</big><em>key</em><big>)</big><a class="headerlink" href="#callback.CallbackManager.sanitize" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">sanitize</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#callback.CallbackManager.sanitize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Will take Frame objects, classes, etc and attempt to return a valid
 string identifier for them.</p>
 </dd></dl>
@@ -172,7 +178,7 @@ string identifier for them.</p>
         <li class="right" >
           <a href="adapters.html" title="adapters"
              >previous</a> |</li>
-        <li><a href="index.html">Pika 0.9.5-dev documentation</a> &raquo;</li> 
+        <li><a href="index.html">Pika __VERSION_STRING__ documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

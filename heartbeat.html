@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>heartbeat &mdash; Pika 0.9.5-dev documentation</title>
+    <title>heartbeat &mdash; Pika __VERSION_STRING__ documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.9.5-dev',
+        VERSION:     '__VERSION_STRING__',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,9 +25,9 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Pika 0.9.5-dev documentation" href="index.html" />
+    <link rel="top" title="Pika __VERSION_STRING__ documentation" href="index.html" />
     <link rel="next" title="log" href="log.html" />
-    <link rel="prev" title="frame" href="frame.html" /> 
+    <link rel="prev" title="frames" href="frames.html" /> 
   </head>
   <body>
     <div class="related">
@@ -43,9 +43,9 @@
           <a href="log.html" title="log"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="frame.html" title="frame"
+          <a href="frames.html" title="frames"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Pika 0.9.5-dev documentation</a> &raquo;</li> 
+        <li><a href="index.html">Pika __VERSION_STRING__ documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -64,12 +64,12 @@
 <h2>HeartbeatChecker<a class="headerlink" href="#heartbeatchecker" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="heartbeat.HeartbeatChecker">
-<em class="property">class </em><tt class="descclassname">heartbeat.</tt><tt class="descname">HeartbeatChecker</tt><big>(</big><em>connection</em>, <em>interval</em><big>)</big><a class="headerlink" href="#heartbeat.HeartbeatChecker" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">heartbeat.</tt><tt class="descname">HeartbeatChecker</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#heartbeat.HeartbeatChecker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a heartbeat on connection sending a heartbeat frame every
 interval seconds.</p>
 <dl class="method">
 <dt id="heartbeat.HeartbeatChecker.setup_timer">
-<tt class="descname">setup_timer</tt><big>(</big><big>)</big><a class="headerlink" href="#heartbeat.HeartbeatChecker.setup_timer" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">setup_timer</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#heartbeat.HeartbeatChecker.setup_timer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the connection objects delayed_call function which is implemented
 by the Adapter for calling the
 check_heartbeats function every interval seconds</p>
@@ -77,7 +77,7 @@ check_heartbeats function every interval seconds</p>
 
 <dl class="method">
 <dt id="heartbeat.HeartbeatChecker.send_and_check">
-<tt class="descname">send_and_check</tt><big>(</big><big>)</big><a class="headerlink" href="#heartbeat.HeartbeatChecker.send_and_check" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">send_and_check</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#heartbeat.HeartbeatChecker.send_and_check" title="Permalink to this definition">¶</a></dt>
 <dd><p>Invoked by a timer to send a heartbeat when we need to, check to see
 if we&#8217;ve missed any heartbeats and disconnect our connection if it&#8217;s
 been idle too long</p>
@@ -103,8 +103,8 @@ been idle too long</p>
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="frame.html"
-                        title="previous chapter">frame</a></p>
+  <p class="topless"><a href="frames.html"
+                        title="previous chapter">frames</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="log.html"
                         title="next chapter">log</a></p>
@@ -143,9 +143,9 @@ been idle too long</p>
           <a href="log.html" title="log"
              >next</a> |</li>
         <li class="right" >
-          <a href="frame.html" title="frame"
+          <a href="frames.html" title="frames"
              >previous</a> |</li>
-        <li><a href="index.html">Pika 0.9.5-dev documentation</a> &raquo;</li> 
+        <li><a href="index.html">Pika __VERSION_STRING__ documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
