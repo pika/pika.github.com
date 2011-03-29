@@ -10,7 +10,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Index &mdash; Pika 0.9.4 documentation</title>
+    <title>Index &mdash; Pika 0.9.5 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -18,7 +18,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.9.4',
+        VERSION:     '0.9.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -27,7 +27,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Pika 0.9.4 documentation" href="index.html" /> 
+    <link rel="top" title="Pika 0.9.5 documentation" href="index.html" /> 
   </head>
   <body>
     <div class="related">
@@ -39,7 +39,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">Pika 0.9.4 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Pika 0.9.5 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -90,27 +90,9 @@
   </dt>
 
       
-  <dt><a href="frames.html#frames.Body._marshal">_marshal() (frames.Body method)</a>
+  <dt><a href="frame.html#frame.Frame._marshal">_marshal() (frame.Frame method)</a>
   </dt>
 
-      <dd><dl>
-        
-  <dt><a href="frames.html#frames.Frame._marshal">(frames.Frame method)</a>
-  </dt>
-
-        
-  <dt><a href="frames.html#frames.Header._marshal">(frames.Header method)</a>
-  </dt>
-
-        
-  <dt><a href="frames.html#frames.Method._marshal">(frames.Method method)</a>
-  </dt>
-
-        
-  <dt><a href="frames.html#frames.ProtocolHeader._marshal">(frames.ProtocolHeader method)</a>
-  </dt>
-
-      </dl></dd>
       
   <dt><a href="channel.html#channel.ChannelTransport._on_event_ok">_on_event_ok() (channel.ChannelTransport method)</a>
   </dt>
@@ -506,10 +488,14 @@
 
       </dl></dd>
       
-  <dt><a href="adapters.html#adapters.select_connection.EPollPoller.add_timeout">add_timeout() (adapters.select_connection.EPollPoller method)</a>
+  <dt><a href="connecting.html#adapters.blocking_connection.BlockingConnection.add_timeout">add_timeout() (adapters.blocking_connection.BlockingConnection method)</a>
   </dt>
 
       <dd><dl>
+        
+  <dt><a href="adapters.html#adapters.select_connection.EPollPoller.add_timeout">(adapters.select_connection.EPollPoller method)</a>
+  </dt>
+
         
   <dt><a href="adapters.html#adapters.select_connection.IOLoop.add_timeout">(adapters.select_connection.IOLoop method)</a>
   </dt>
@@ -762,7 +748,7 @@
   </dt>
 
       
-  <dt><a href="frames.html#frames.Body">Body (class in frames)</a>
+  <dt><a href="frame.html#frame.Body">Body (class in frame)</a>
   </dt>
 
       
@@ -885,16 +871,26 @@
   <dt><a href="spec.html#spec.Confirm">Confirm (class in spec)</a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="spec.html#spec.Confirm.Select">Confirm.Select (class in spec)</a>
   </dt>
 
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="spec.html#spec.Confirm.SelectOk">Confirm.SelectOk (class in spec)</a>
   </dt>
 
+      
+  <dt><a href="communicating.html#blocking_connection.BlockingChannel.confirm_delivery">confirm_delivery() (blocking_connection.BlockingChannel method)</a>
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="communicating.html#channel.Channel.confirm_delivery">(channel.Channel method)</a>
+  </dt>
+
+      </dl></dd>
       
   <dt><a href="spec.html#spec.Connection">Connection (class in spec)</a>
   </dt>
@@ -967,6 +963,10 @@
 <h2 id="D">D</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="data.html#module-data">data (module)</a>
+  </dt>
+
       
   <dt><a href="spec.html#spec.Access.Request.decode">decode() (spec.Access.Request method)</a>
   </dt>
@@ -1222,11 +1222,15 @@
 
       </dl></dd>
       
-  <dt><a href="table.html#table.decode_table">decode_table() (in module table)</a>
+  <dt><a href="frame.html#frame.decode_frame">decode_frame() (in module frame)</a>
   </dt>
 
       
-  <dt><a href="table.html#table.decode_value">decode_value() (in module table)</a>
+  <dt><a href="data.html#data.decode_table">decode_table() (in module data)</a>
+  </dt>
+
+      
+  <dt><a href="data.html#data.decode_value">decode_value() (in module data)</a>
   </dt>
 
   </dl></td>
@@ -1237,6 +1241,10 @@
 
       
   <dt><a href="exceptions.html#exceptions.DeprecationWarning">DeprecationWarning</a>
+  </dt>
+
+      
+  <dt><a href="frame.html#frame.Dispatcher">Dispatcher (class in frame)</a>
   </dt>
 
       
@@ -1504,11 +1512,11 @@
 
       </dl></dd>
       
-  <dt><a href="table.html#table.encode_table">encode_table() (in module table)</a>
+  <dt><a href="data.html#data.encode_table">encode_table() (in module data)</a>
   </dt>
 
       
-  <dt><a href="table.html#table.encode_value">encode_value() (in module table)</a>
+  <dt><a href="data.html#data.encode_value">encode_value() (in module data)</a>
   </dt>
 
       
@@ -1549,6 +1557,10 @@
 
       
   <dt><a href="adapters.html#adapters.select_connection.EPollPoller">EPollPoller (class in adapters.select_connection)</a>
+  </dt>
+
+      
+  <dt><a href="connecting.html#credentials.PlainCredentials.erase_credentials">erase_credentials() (credentials.PlainCredentials method)</a>
   </dt>
 
       
@@ -1722,11 +1734,11 @@
   </dt>
 
       
-  <dt><a href="frames.html#frames.Frame">Frame (class in frames)</a>
+  <dt><a href="frame.html#frame.Frame">Frame (class in frame)</a>
   </dt>
 
       
-  <dt><a href="frames.html#module-frames">frames (module)</a>
+  <dt><a href="frame.html#module-frame">frame (module)</a>
   </dt>
 
       
@@ -2264,7 +2276,7 @@
   </dt>
 
       
-  <dt><a href="frames.html#frames.Header">Header (class in frames)</a>
+  <dt><a href="frame.html#frame.Header">Header (class in frame)</a>
   </dt>
 
   </dl></td>
@@ -2581,22 +2593,12 @@
   </dt>
 
       </dl></dd>
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="exceptions.html#exceptions.IndexError">IndexError</a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
-      
-  <dt><a href="adapters.html#adapters.select_connection.IOLoop.instance">instance() (adapters.select_connection.IOLoop class method)</a>
-  </dt>
-
-      <dd><dl>
-        
-  <dt><a href="callback.html#callback.CallbackManager.instance">(callback.CallbackManager class method)</a>
-  </dt>
-
-      </dl></dd>
       
   <dt><a href="exceptions.html#exceptions.IOError">IOError</a>
   </dt>
@@ -2674,20 +2676,20 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="frames.html#frames.Body.marshal">marshal() (frames.Body method)</a>
+  <dt><a href="frame.html#frame.Body.marshal">marshal() (frame.Body method)</a>
   </dt>
 
       <dd><dl>
         
-  <dt><a href="frames.html#frames.Header.marshal">(frames.Header method)</a>
+  <dt><a href="frame.html#frame.Header.marshal">(frame.Header method)</a>
   </dt>
 
         
-  <dt><a href="frames.html#frames.Method.marshal">(frames.Method method)</a>
+  <dt><a href="frame.html#frame.Method.marshal">(frame.Method method)</a>
   </dt>
 
         
-  <dt><a href="frames.html#frames.ProtocolHeader.marshal">(frames.ProtocolHeader method)</a>
+  <dt><a href="frame.html#frame.ProtocolHeader.marshal">(frame.ProtocolHeader method)</a>
   </dt>
 
       </dl></dd>
@@ -2696,7 +2698,7 @@
   </dt>
 
       
-  <dt><a href="frames.html#frames.Method">Method (class in frames)</a>
+  <dt><a href="frame.html#frame.Method">Method (class in frame)</a>
   </dt>
 
       <dd><dl>
@@ -2722,30 +2724,10 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="frames.html#frames.Body.name">name (frames.Body attribute)</a>
+  <dt><a href="object.html#object.Class.name">name (object.Class attribute)</a>
   </dt>
 
       <dd><dl>
-        
-  <dt><a href="frames.html#frames.Frame.name">(frames.Frame attribute)</a>
-  </dt>
-
-        
-  <dt><a href="frames.html#frames.Header.name">(frames.Header attribute)</a>
-  </dt>
-
-        
-  <dt><a href="frames.html#frames.Method.name">(frames.Method attribute)</a>
-  </dt>
-
-        
-  <dt><a href="frames.html#frames.ProtocolHeader.name">(frames.ProtocolHeader attribute)</a>
-  </dt>
-
-        
-  <dt><a href="object.html#object.Class.name">(object.Class attribute)</a>
-  </dt>
-
         
   <dt><a href="object.html#object.Method.name">(object.Method attribute)</a>
   </dt>
@@ -3501,11 +3483,21 @@
   <dt><a href="callback.html#callback.CallbackManager.process">process() (callback.CallbackManager method)</a>
   </dt>
 
+      <dd><dl>
+        
+  <dt><a href="frame.html#frame.Dispatcher.process">(frame.Dispatcher method)</a>
+  </dt>
+
+      </dl></dd>
       
-  <dt><a href="adapters.html#adapters.select_connection.EPollPoller.process_timeouts">process_timeouts() (adapters.select_connection.EPollPoller method)</a>
+  <dt><a href="connecting.html#adapters.blocking_connection.BlockingConnection.process_timeouts">process_timeouts() (adapters.blocking_connection.BlockingConnection method)</a>
   </dt>
 
       <dd><dl>
+        
+  <dt><a href="adapters.html#adapters.select_connection.EPollPoller.process_timeouts">(adapters.select_connection.EPollPoller method)</a>
+  </dt>
+
         
   <dt><a href="adapters.html#adapters.select_connection.KQueuePoller.process_timeouts">(adapters.select_connection.KQueuePoller method)</a>
   </dt>
@@ -3524,7 +3516,7 @@
   </dt>
 
       
-  <dt><a href="frames.html#frames.ProtocolHeader">ProtocolHeader (class in frames)</a>
+  <dt><a href="frame.html#frame.ProtocolHeader">ProtocolHeader (class in frame)</a>
   </dt>
 
   </dl></td>
@@ -3681,13 +3673,15 @@
   <dt><a href="callback.html#callback.CallbackManager.remove">remove() (callback.CallbackManager method)</a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="adapters.html#adapters.select_connection.EPollPoller.remove_timeout">remove_timeout() (adapters.select_connection.EPollPoller method)</a>
+  <dt><a href="connecting.html#adapters.blocking_connection.BlockingConnection.remove_timeout">remove_timeout() (adapters.blocking_connection.BlockingConnection method)</a>
   </dt>
 
       <dd><dl>
+        
+  <dt><a href="adapters.html#adapters.select_connection.EPollPoller.remove_timeout">(adapters.select_connection.EPollPoller method)</a>
+  </dt>
+
         
   <dt><a href="adapters.html#adapters.select_connection.IOLoop.remove_timeout">(adapters.select_connection.IOLoop method)</a>
   </dt>
@@ -3705,6 +3699,12 @@
   </dt>
 
       </dl></dd>
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="connecting.html#credentials.PlainCredentials.response_for">response_for() (credentials.PlainCredentials method)</a>
+  </dt>
+
       
   <dt><a href="channel.html#channel.ChannelTransport.rpc">rpc() (channel.ChannelTransport method)</a>
   </dt>
@@ -3791,8 +3791,6 @@
   </dt>
 
       </dl></dd>
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="adapters.html#adapters.select_connection.EPollPoller.start">start() (adapters.select_connection.EPollPoller method)</a>
   </dt>
@@ -3815,6 +3813,12 @@
   </dt>
 
       </dl></dd>
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="communicating.html#blocking_connection.BlockingChannel.start_consuming">start_consuming() (blocking_connection.BlockingChannel method)</a>
+  </dt>
+
       
   <dt><a href="adapters.html#adapters.select_connection.IOLoop.start_poller">start_poller() (adapters.select_connection.IOLoop method)</a>
   </dt>
@@ -4112,10 +4116,6 @@
   </dt>
 
       
-  <dt><a href="table.html#module-table">table (module)</a>
-  </dt>
-
-      
   <dt><a href="exceptions.html#exceptions.SyntaxError.text">text (exceptions.SyntaxError attribute)</a>
   </dt>
 
@@ -4153,12 +4153,12 @@
   <dt><a href="spec.html#spec.Tx.CommitOk">Tx.CommitOk (class in spec)</a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="spec.html#spec.Tx.Rollback">Tx.Rollback (class in spec)</a>
   </dt>
 
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="spec.html#spec.Tx.RollbackOk">Tx.RollbackOk (class in spec)</a>
   </dt>
@@ -4282,6 +4282,12 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
       
+  <dt><a href="data.html#data.validate_type">validate_type() (in module data)</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
   <dt><a href="exceptions.html#exceptions.ValueError">ValueError</a>
   </dt>
 
@@ -4344,7 +4350,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">Pika 0.9.4 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Pika 0.9.5 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

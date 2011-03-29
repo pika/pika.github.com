@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>simplebuffer &mdash; Pika 0.9.4 documentation</title>
+    <title>simplebuffer &mdash; Pika 0.9.5 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.9.4',
+        VERSION:     '0.9.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Pika 0.9.4 documentation" href="index.html" />
+    <link rel="top" title="Pika 0.9.5 documentation" href="index.html" />
     <link rel="next" title="spec" href="spec.html" />
     <link rel="prev" title="reconnection_strategies" href="reconnection_strategies.html" /> 
   </head>
@@ -45,7 +45,7 @@
         <li class="right" >
           <a href="reconnection_strategies.html" title="reconnection_strategies"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Pika 0.9.4 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Pika 0.9.5 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -69,7 +69,7 @@ and append data to the end.</p>
 Use this to avoid concatenating or splitting large strings.</p>
 <dl class="class">
 <dt>
-<em class="property">class </em><tt class="descclassname">simplebuffer.</tt><tt class="descname">SimpleBuffer</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<em class="property">class </em><tt class="descclassname">simplebuffer.</tt><tt class="descname">SimpleBuffer</tt><big>(</big><em>data=None</em><big>)</big></dt>
 <dd><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">SimpleBuffer</span><span class="p">(</span><span class="s">&quot;abcdef&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="o">.</span><span class="n">read_and_consume</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="go">&#39;abc&#39;</span>
@@ -87,37 +87,37 @@ Use this to avoid concatenating or splitting large strings.</p>
 </div>
 <dl class="method">
 <dt>
-<tt class="descclassname">SimpleBuffer.</tt><tt class="descname">write</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">SimpleBuffer.</tt><tt class="descname">write</tt><big>(</big><em>*data_strings</em><big>)</big></dt>
 <dd><p>Append given strings to the buffer.</p>
 </dd></dl>
 
 <dl class="method">
 <dt>
-<tt class="descclassname">SimpleBuffer.</tt><tt class="descname">read</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">SimpleBuffer.</tt><tt class="descname">read</tt><big>(</big><em>size=None</em><big>)</big></dt>
 <dd><p>Read the data from the buffer, at most &#8216;size&#8217; bytes.</p>
 </dd></dl>
 
 <dl class="method">
 <dt>
-<tt class="descclassname">SimpleBuffer.</tt><tt class="descname">consume</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">SimpleBuffer.</tt><tt class="descname">consume</tt><big>(</big><em>size</em><big>)</big></dt>
 <dd><p>Move pointer and discard first &#8216;size&#8217; bytes.</p>
 </dd></dl>
 
 <dl class="method">
 <dt>
-<tt class="descclassname">SimpleBuffer.</tt><tt class="descname">read_and_consume</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">SimpleBuffer.</tt><tt class="descname">read_and_consume</tt><big>(</big><em>size</em><big>)</big></dt>
 <dd><p>Read up to &#8216;size&#8217; bytes, also remove it from the buffer.</p>
 </dd></dl>
 
 <dl class="method">
 <dt>
-<tt class="descclassname">SimpleBuffer.</tt><tt class="descname">send_to_socket</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">SimpleBuffer.</tt><tt class="descname">send_to_socket</tt><big>(</big><em>sd</em><big>)</big></dt>
 <dd><p>Faster way of sending buffer data to socket &#8216;sd&#8217;.</p>
 </dd></dl>
 
 <dl class="method">
 <dt>
-<tt class="descclassname">SimpleBuffer.</tt><tt class="descname">flush</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">SimpleBuffer.</tt><tt class="descname">flush</tt><big>(</big><big>)</big></dt>
 <dd><p>Remove all the data from buffer.</p>
 </dd></dl>
 
@@ -183,7 +183,7 @@ Use this to avoid concatenating or splitting large strings.</p>
         <li class="right" >
           <a href="reconnection_strategies.html" title="reconnection_strategies"
              >previous</a> |</li>
-        <li><a href="index.html">Pika 0.9.4 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Pika 0.9.5 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

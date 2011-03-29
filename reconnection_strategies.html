@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>reconnection_strategies &mdash; Pika 0.9.4 documentation</title>
+    <title>reconnection_strategies &mdash; Pika 0.9.5 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.9.4',
+        VERSION:     '0.9.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Pika 0.9.4 documentation" href="index.html" />
+    <link rel="top" title="Pika 0.9.5 documentation" href="index.html" />
     <link rel="next" title="simplebuffer" href="simplebuffer.html" />
     <link rel="prev" title="object" href="object.html" /> 
   </head>
@@ -45,7 +45,7 @@
         <li class="right" >
           <a href="object.html" title="object"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Pika 0.9.4 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Pika 0.9.5 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -150,7 +150,7 @@
 <h2>SimpleReconnectionStrategy<a class="headerlink" href="#simplereconnectionstrategy" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt>
-<em class="property">class </em><tt class="descclassname">reconnection_strategies.</tt><tt class="descname">SimpleReconnectionStrategy</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<em class="property">class </em><tt class="descclassname">reconnection_strategies.</tt><tt class="descname">SimpleReconnectionStrategy</tt><big>(</big><em>initial_retry_delay=1.0</em>, <em>multiplier=2.0</em>, <em>max_delay=30.0</em>, <em>jitter=0.5</em><big>)</big></dt>
 <dd><dl class="attribute">
 <dt>
 <tt class="descclassname">SimpleReconnectionStrategy.</tt><tt class="descname">can_reconnect</tt><em class="property"> = True</em></dt>
@@ -158,22 +158,22 @@
 
 <dl class="method">
 <dt>
-<tt class="descclassname">SimpleReconnectionStrategy.</tt><tt class="descname">_reset</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">SimpleReconnectionStrategy.</tt><tt class="descname">_reset</tt><big>(</big><big>)</big></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt>
-<tt class="descclassname">SimpleReconnectionStrategy.</tt><tt class="descname">on_connect_attempt</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">SimpleReconnectionStrategy.</tt><tt class="descname">on_connect_attempt</tt><big>(</big><em>conn</em><big>)</big></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt>
-<tt class="descclassname">SimpleReconnectionStrategy.</tt><tt class="descname">on_connection_open</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">SimpleReconnectionStrategy.</tt><tt class="descname">on_connection_open</tt><big>(</big><em>conn</em><big>)</big></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt>
-<tt class="descclassname">SimpleReconnectionStrategy.</tt><tt class="descname">on_connection_closed</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">SimpleReconnectionStrategy.</tt><tt class="descname">on_connection_closed</tt><big>(</big><em>conn</em><big>)</big></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -255,7 +255,7 @@
         <li class="right" >
           <a href="object.html" title="object"
              >previous</a> |</li>
-        <li><a href="index.html">Pika 0.9.4 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Pika 0.9.5 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

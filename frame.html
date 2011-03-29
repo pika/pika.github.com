@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>frame &mdash; Pika __VERSION_STRING__ documentation</title>
+    <title>frame &mdash; Pika 0.9.5 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '__VERSION_STRING__',
+        VERSION:     '0.9.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,9 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Pika __VERSION_STRING__ documentation" href="index.html" /> 
+    <link rel="top" title="Pika 0.9.5 documentation" href="index.html" />
+    <link rel="next" title="heartbeat" href="heartbeat.html" />
+    <link rel="prev" title="exceptions" href="exceptions.html" /> 
   </head>
   <body>
     <div class="related">
@@ -37,7 +39,13 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">Pika __VERSION_STRING__ documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="heartbeat.html" title="heartbeat"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="exceptions.html" title="exceptions"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Pika 0.9.5 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -53,26 +61,159 @@
 <p class="first admonition-title">Note</p>
 <p class="last">This class level documentation is not intended for use by those using Pika in their applications. This documentation is for those who are extending Pika or otherwise working on the driver itself.</p>
 </div>
-<div class="section" id="id1">
+<span class="target" id="module-frame"></span><div class="section" id="id1">
 <h2>Frame<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="frame.Frame">
+<em class="property">class </em><tt class="descclassname">frame.</tt><tt class="descname">Frame</tt><big>(</big><em>frame_type</em>, <em>channel_number</em><big>)</big><a class="headerlink" href="#frame.Frame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base Frame object mapping. Defines a behavior for all child classes for
+assignment of core attributes and implementation of the a core _marshal
+method which child classes use to create the binary AMQP frame.</p>
+<p>Parameters:</p>
+<ul class="simple">
+<li>frame_type: int</li>
+<li>channel_number: int</li>
+</ul>
+<dl class="method">
+<dt id="frame.Frame._marshal">
+<tt class="descname">_marshal</tt><big>(</big><em>pieces</em><big>)</big><a class="headerlink" href="#frame.Frame._marshal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the full AMQP wire protocol frame data representation</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="method">
 <h2>Method<a class="headerlink" href="#method" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="frame.Method">
+<em class="property">class </em><tt class="descclassname">frame.</tt><tt class="descname">Method</tt><big>(</big><em>channel_number</em>, <em>method</em><big>)</big><a class="headerlink" href="#frame.Method" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base Method frame object mapping. AMQP method frames are mappend on top
+of this class for creating or accessing their data and attributes.</p>
+<p>Parameters:</p>
+<ul class="simple">
+<li>channel_number: int</li>
+<li>method: a spec.Class.Method object</li>
+</ul>
+<dl class="method">
+<dt id="frame.Method.marshal">
+<tt class="descname">marshal</tt><big>(</big><big>)</big><a class="headerlink" href="#frame.Method.marshal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the AMQP binary encoded value of the frame</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="header">
 <h2>Header<a class="headerlink" href="#header" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="frame.Header">
+<em class="property">class </em><tt class="descclassname">frame.</tt><tt class="descname">Header</tt><big>(</big><em>channel_number</em>, <em>body_size</em>, <em>props</em><big>)</big><a class="headerlink" href="#frame.Header" title="Permalink to this definition">¶</a></dt>
+<dd><p>Header frame object mapping. AMQP content header frames are mapped
+on top of this class for creating or accessing their data and attributes.</p>
+<p>Parameters:</p>
+<ul class="simple">
+<li>channel_number: int</li>
+<li>body_size: int</li>
+<li>props: <a class="reference internal" href="spec.html#spec.BasicProperties" title="spec.BasicProperties"><tt class="xref py py-meth docutils literal"><span class="pre">BasicProperties()</span></tt></a> object</li>
+</ul>
+<dl class="method">
+<dt id="frame.Header.marshal">
+<tt class="descname">marshal</tt><big>(</big><big>)</big><a class="headerlink" href="#frame.Header.marshal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the AMQP binary encoded value of the frame</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="body">
 <h2>Body<a class="headerlink" href="#body" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="frame.Body">
+<em class="property">class </em><tt class="descclassname">frame.</tt><tt class="descname">Body</tt><big>(</big><em>channel_number</em>, <em>fragment</em><big>)</big><a class="headerlink" href="#frame.Body" title="Permalink to this definition">¶</a></dt>
+<dd><p>Body frame object mapping class. AMQP content body frames are mapped on
+to this base class for getting/setting of attributes/data.</p>
+<p>Parameters:</p>
+<ul class="simple">
+<li>channel_number: int</li>
+<li>fragment: str</li>
+</ul>
+<dl class="method">
+<dt id="frame.Body.marshal">
+<tt class="descname">marshal</tt><big>(</big><big>)</big><a class="headerlink" href="#frame.Body.marshal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the AMQP binary encoded value of the frame</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="protocolheader">
 <h2>ProtocolHeader<a class="headerlink" href="#protocolheader" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="frame.ProtocolHeader">
+<em class="property">class </em><tt class="descclassname">frame.</tt><tt class="descname">ProtocolHeader</tt><big>(</big><em>major=None</em>, <em>minor=None</em>, <em>revision=None</em><big>)</big><a class="headerlink" href="#frame.ProtocolHeader" title="Permalink to this definition">¶</a></dt>
+<dd><p>AMQP Protocol header frame class which provides a pythonic interface
+for creating AMQP Protocol headers</p>
+<p>Construct a Protocol Header frame object for the specified AMQP version</p>
+<p>Parameters:</p>
+<ul class="simple">
+<li>major: int</li>
+<li>miinor: int</li>
+<li>revision: int</li>
+</ul>
+<dl class="method">
+<dt id="frame.ProtocolHeader.marshal">
+<tt class="descname">marshal</tt><big>(</big><big>)</big><a class="headerlink" href="#frame.ProtocolHeader.marshal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the full AMQP wire protocol frame data representation of the
+ProtocolHeader frame</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="dispatcher">
 <h2>Dispatcher<a class="headerlink" href="#dispatcher" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="frame.Dispatcher">
+<em class="property">class </em><tt class="descclassname">frame.</tt><tt class="descname">Dispatcher</tt><big>(</big><em>callback_manager</em><big>)</big><a class="headerlink" href="#frame.Dispatcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>This handles content frames which come in in synchronous order as follows:</p>
+<ol class="arabic simple">
+<li>Method Frame</li>
+<li>Header Frame</li>
+<li>Body Frame(s)</li>
+</ol>
+<p>The way that content handler works is to assign the active frame type to
+the self._handler variable. When we receive a header frame that is either
+a Basic.Deliver, Basic.GetOk, or Basic.Return, we will assign the handler
+to the ContentHandler._handle_header_frame. This will fire the next time
+we are called and parse out the attributes required to receive the body
+frames and assemble the content to be returned. We will then assign the
+self._handler to ContentHandler._handle_body_frame.</p>
+<p>_handle_body_frame has two methods inside of it, handle and finish.
+handle will be invoked until the requirements set by the header frame have
+been met at which point it will call the finish method. This calls
+the callback manager with the method frame, header frame and assembled
+body and then reset the self._handler to the _handle_method_frame method.</p>
+<dl class="method">
+<dt id="frame.Dispatcher.process">
+<tt class="descname">process</tt><big>(</big><em>frame</em><big>)</big><a class="headerlink" href="#frame.Dispatcher.process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invoked by the ChannelTransport object when passed frames that are not
+setup in the rpc process and that don&#8217;t have explicit reply types
+defined. This includes Basic.Publish, Basic.GetOk and Basic.Return</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="frame-decoding">
 <h2>Frame Decoding<a class="headerlink" href="#frame-decoding" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="frame.decode_frame">
+<tt class="descclassname">frame.</tt><tt class="descname">decode_frame</tt><big>(</big><em>data_in</em><big>)</big><a class="headerlink" href="#frame.decode_frame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receives raw socket data and attempts to turn it into a frame.
+Returns bytes used to make the frame and the frame</p>
+</dd></dl>
+
 </div>
 </div>
 
@@ -96,6 +237,12 @@
 </li>
 </ul>
 
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="exceptions.html"
+                        title="previous chapter">exceptions</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="heartbeat.html"
+                        title="next chapter">heartbeat</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/frame.txt"
@@ -127,7 +274,13 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">Pika __VERSION_STRING__ documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="heartbeat.html" title="heartbeat"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="exceptions.html" title="exceptions"
+             >previous</a> |</li>
+        <li><a href="index.html">Pika 0.9.5 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

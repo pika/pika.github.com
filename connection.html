@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>connection &mdash; Pika 0.9.4 documentation</title>
+    <title>connection &mdash; Pika 0.9.5 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.9.4',
+        VERSION:     '0.9.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Pika 0.9.4 documentation" href="index.html" />
+    <link rel="top" title="Pika 0.9.5 documentation" href="index.html" />
     <link rel="next" title="credentials" href="credentials.html" />
     <link rel="prev" title="channel" href="channel.html" /> 
   </head>
@@ -45,7 +45,7 @@
         <li class="right" >
           <a href="channel.html" title="channel"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Pika 0.9.4 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Pika 0.9.5 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -64,7 +64,7 @@
 <h2>Connection<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt>
-<em class="property">class </em><tt class="descclassname">connection.</tt><tt class="descname">Connection</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<em class="property">class </em><tt class="descclassname">connection.</tt><tt class="descname">Connection</tt><big>(</big><em>parameters=None</em>, <em>on_open_callback=None</em>, <em>reconnection_strategy=None</em><big>)</big></dt>
 <dd><p>Pika Connection Class</p>
 <p>This is the core class that implements communication with RabbitMQ. This
 class should not be invoked directly but rather through the use of an
@@ -75,7 +75,7 @@ to the AMQP Broker.</p>
 <p>A reconnection_strategy of None will use the NullReconnectionStrategy</p>
 <dl class="method">
 <dt>
-<tt class="descclassname">Connection.</tt><tt class="descname">_init_connection_state</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">Connection.</tt><tt class="descname">_init_connection_state</tt><big>(</big><big>)</big></dt>
 <dd><p>Initialize or reset all of our internal state variables for a given
 connection. If we disconnect and reconnect, all of our state needs to
 be wiped</p>
@@ -96,28 +96,28 @@ transport (socket) to close.</p>
 
 <dl class="method">
 <dt>
-<tt class="descclassname">Connection.</tt><tt class="descname">_connect</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">Connection.</tt><tt class="descname">_connect</tt><big>(</big><big>)</big></dt>
 <dd><p>Call the Adapter&#8217;s connect method after letting the
 ReconnectionStrategy know that we&#8217;re going to do so.</p>
 </dd></dl>
 
 <dl class="method">
 <dt>
-<tt class="descclassname">Connection.</tt><tt class="descname">_reconnect</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">Connection.</tt><tt class="descname">_reconnect</tt><big>(</big><big>)</big></dt>
 <dd><p>Called by the Reconnection Strategy classes or Adapters to disconnect
 and reconnect to the broker</p>
 </dd></dl>
 
 <dl class="method">
 <dt>
-<tt class="descclassname">Connection.</tt><tt class="descname">_on_connected</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">Connection.</tt><tt class="descname">_on_connected</tt><big>(</big><big>)</big></dt>
 <dd><p>This is called by our connection Adapter to let us know that we&#8217;ve
 connected and we can notify our connection strategy</p>
 </dd></dl>
 
 <dl class="method">
 <dt>
-<tt class="descclassname">Connection.</tt><tt class="descname">_on_connection_open</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">Connection.</tt><tt class="descname">_on_connection_open</tt><big>(</big><em>frame</em><big>)</big></dt>
 <dd><p>This is called once we have tuned the connection with the server and
 called the Connection.Open on the server and it has replied with
 Connection.Ok.</p>
@@ -125,28 +125,21 @@ Connection.Ok.</p>
 
 <dl class="method">
 <dt>
-<tt class="descclassname">Connection.</tt><tt class="descname">_on_connection_start</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">Connection.</tt><tt class="descname">_on_connection_start</tt><big>(</big><em>frame</em><big>)</big></dt>
 <dd><p>This is called as a callback once we have received a Connection.Start
 from the server.</p>
 </dd></dl>
 
 <dl class="method">
 <dt>
-<tt class="descclassname">Connection.</tt><tt class="descname">_erase_credentials</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
-<dd><p>Override if in some context you need the object to forget
-its login credentials after successfully opening a connection.</p>
-</dd></dl>
-
-<dl class="method">
-<dt>
-<tt class="descclassname">Connection.</tt><tt class="descname">_combine</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">Connection.</tt><tt class="descname">_combine</tt><big>(</big><em>a</em>, <em>b</em><big>)</big></dt>
 <dd><p>Pass in two values, if a is 0, return b otherwise if b is 0, return a.
 If neither case matches return the smallest value.</p>
 </dd></dl>
 
 <dl class="method">
 <dt>
-<tt class="descclassname">Connection.</tt><tt class="descname">_on_connection_tune</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">Connection.</tt><tt class="descname">_on_connection_tune</tt><big>(</big><em>frame</em><big>)</big></dt>
 <dd><p>Once the Broker sends back a Connection.Tune, we will set our tuning
 variables that have been returned to us and kick off the Heartbeat
 monitor if required, send our TuneOk and then the Connection. Open rpc
@@ -155,7 +148,7 @@ call on channel 0</p>
 
 <dl class="method">
 <dt>
-<tt class="descclassname">Connection.</tt><tt class="descname">close</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">Connection.</tt><tt class="descname">close</tt><big>(</big><em>code=200</em>, <em>text='Normal shutdown'</em><big>)</big></dt>
 <dd><p>Disconnect from RabbitMQ. If there are any open channels, it will
 attempt to close them prior to fully disconnecting. Channels which
 have active consumers will attempt to send a Basic.Cancel to RabbitMQ
@@ -164,26 +157,26 @@ to cleanly stop the delivery of messages prior to closing the channel.</p>
 
 <dl class="method">
 <dt>
-<tt class="descclassname">Connection.</tt><tt class="descname">_on_close_ready</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">Connection.</tt><tt class="descname">_on_close_ready</tt><big>(</big><big>)</big></dt>
 <dd><p>On a clean shutdown we&#8217;ll call this once all of our channels are closed
 Let the Broker know we want to close</p>
 </dd></dl>
 
 <dl class="method">
 <dt>
-<tt class="descclassname">Connection.</tt><tt class="descname">_on_connection_closed</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">Connection.</tt><tt class="descname">_on_connection_closed</tt><big>(</big><em>frame</em>, <em>from_adapter=False</em><big>)</big></dt>
 <dd><p>Let both our RS and Event object know we closed</p>
 </dd></dl>
 
 <dl class="method">
 <dt>
-<tt class="descclassname">Connection.</tt><tt class="descname">_on_remote_close</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">Connection.</tt><tt class="descname">_on_remote_close</tt><big>(</big><em>frame</em><big>)</big></dt>
 <dd><p>We&#8217;ve received a remote close from the server</p>
 </dd></dl>
 
 <dl class="method">
 <dt>
-<tt class="descclassname">Connection.</tt><tt class="descname">_ensure_closed</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">Connection.</tt><tt class="descname">_ensure_closed</tt><big>(</big><big>)</big></dt>
 <dd><p>If we&#8217;re not already closed, make sure we&#8217;re closed</p>
 </dd></dl>
 
@@ -195,26 +188,26 @@ Let the Broker know we want to close</p>
 
 <dl class="method">
 <dt>
-<tt class="descclassname">Connection.</tt><tt class="descname">add_on_close_callback</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">Connection.</tt><tt class="descname">add_on_close_callback</tt><big>(</big><em>callback</em><big>)</big></dt>
 <dd><p>Add a callback notification when the connection has closed</p>
 </dd></dl>
 
 <dl class="method">
 <dt>
-<tt class="descclassname">Connection.</tt><tt class="descname">add_on_open_callback</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">Connection.</tt><tt class="descname">add_on_open_callback</tt><big>(</big><em>callback</em><big>)</big></dt>
 <dd><p>Add a callback notification when the connection has opened</p>
 </dd></dl>
 
 <dl class="method">
 <dt>
-<tt class="descclassname">Connection.</tt><tt class="descname">add_backpressure_callback</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">Connection.</tt><tt class="descname">add_backpressure_callback</tt><big>(</big><em>callback</em><big>)</big></dt>
 <dd><p>Add a callback notification when we think backpressue is being applied
 due to the size of the output buffer being exceeded.</p>
 </dd></dl>
 
 <dl class="method">
 <dt>
-<tt class="descclassname">Connection.</tt><tt class="descname">set_backpressure_multiplier</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">Connection.</tt><tt class="descname">set_backpressure_multiplier</tt><big>(</big><em>value=10</em><big>)</big></dt>
 <dd><p>Alter the backpressure multiplier value. We set this to 10 by default.
 This value is used to raise warnings and trigger the backpressure
 callback.</p>
@@ -238,7 +231,7 @@ thread, or similar.</p>
 
 <dl class="method">
 <dt>
-<tt class="descclassname">Connection.</tt><tt class="descname">channel</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">Connection.</tt><tt class="descname">channel</tt><big>(</big><em>on_open_callback</em>, <em>channel_number=None</em><big>)</big></dt>
 <dd><p>Create a new channel with the next available channel number or pass in
 a channel number to use. Must be non-zero if you would like to specify
 but it is recommended that you let Pika manage the channel numbers.</p>
@@ -246,26 +239,26 @@ but it is recommended that you let Pika manage the channel numbers.</p>
 
 <dl class="method">
 <dt>
-<tt class="descclassname">Connection.</tt><tt class="descname">_next_channel_number</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">Connection.</tt><tt class="descname">_next_channel_number</tt><big>(</big><big>)</big></dt>
 <dd><p>Return the next available channel number or raise on exception</p>
 </dd></dl>
 
 <dl class="method">
 <dt>
-<tt class="descclassname">Connection.</tt><tt class="descname">_on_channel_close</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">Connection.</tt><tt class="descname">_on_channel_close</tt><big>(</big><em>frame</em><big>)</big></dt>
 <dd><p>RPC Response from when a channel closes itself, remove from our stack</p>
 </dd></dl>
 
 <dl class="method">
 <dt>
-<tt class="descclassname">Connection.</tt><tt class="descname">_on_data_available</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">Connection.</tt><tt class="descname">_on_data_available</tt><big>(</big><em>data_in</em><big>)</big></dt>
 <dd><p>This is called by our Adapter, passing in the data from the socket
 As long as we have buffer try and map out frame data</p>
 </dd></dl>
 
 <dl class="method">
 <dt>
-<tt class="descclassname">Connection.</tt><tt class="descname">_rpc</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">Connection.</tt><tt class="descname">_rpc</tt><big>(</big><em>channel_number</em>, <em>method</em>, <em>callback=None</em>, <em>acceptable_replies=None</em><big>)</big></dt>
 <dd><p>Make an RPC call for the given callback, channel number and method.
 acceptable_replies lists out what responses we&#8217;ll process from the
 server with the specified callback.</p>
@@ -273,7 +266,7 @@ server with the specified callback.</p>
 
 <dl class="method">
 <dt>
-<tt class="descclassname">Connection.</tt><tt class="descname">_send_frame</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">Connection.</tt><tt class="descname">_send_frame</tt><big>(</big><em>frame</em><big>)</big></dt>
 <dd><p>This appends the fully generated frame to send to the broker to the
 output buffer which will be then sent via the connection adapter</p>
 </dd></dl>
@@ -287,7 +280,7 @@ outbound_buffer out along the socket.</p>
 
 <dl class="method">
 <dt>
-<tt class="descclassname">Connection.</tt><tt class="descname">_send_method</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big></dt>
+<tt class="descclassname">Connection.</tt><tt class="descname">_send_method</tt><big>(</big><em>channel_number</em>, <em>method</em>, <em>content=None</em><big>)</big></dt>
 <dd><p>Constructs a RPC method frame and then sends it to the broker</p>
 </dd></dl>
 
@@ -360,7 +353,7 @@ default if that is None</p>
         <li class="right" >
           <a href="channel.html" title="channel"
              >previous</a> |</li>
-        <li><a href="index.html">Pika 0.9.4 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Pika 0.9.5 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
